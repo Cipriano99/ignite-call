@@ -4,6 +4,7 @@ import previewImage from '@/assets/callendar.png'
 
 import * as S from './styles'
 import Image from 'next/image'
+import { ClaimUsernameForm } from './components/ClaimUsernameForm'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           Conecte seu calendário e permita que as pessoas marquem agendamentos
           no seu tempo livre.
         </Text>
+        <ClaimUsernameForm />
       </S.Hero>
 
       <S.Preview>
