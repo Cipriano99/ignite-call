@@ -1,16 +1,33 @@
-import { Box, Text, styled } from '@ignite-ui/react'
+import { Heading, Text } from '@ignite-ui/react'
 
-export const Form = styled(Box, {
-  display: 'grid',
-  gridTemplateColumns: '1fr auto',
-  gap: '$2',
-  marginTop: '$4',
-  padding: '$4',
-})
+import previewImage from '@/assets/callendar.png'
 
-export const FormAnnotations = styled('div', {
-  marginTop: '$2',
-  [`> ${Text}`]: {
-    color: '$gray400',
-  },
-})
+import * as S from './styles'
+import Image from 'next/image'
+import { ClaimUsernameForm } from './components/ClaimUsernameForm'
+
+export default function Home() {
+  return (
+    <S.Container>
+      <S.Hero>
+        <Heading size="4xl">Agendamento descomplicado</Heading>
+        <Text size="xl">
+          Conecte seu calendário e permita que as pessoas marquem agendamentos
+          no seu tempo livre.
+        </Text>
+        <ClaimUsernameForm />
+      </S.Hero>
+
+      <S.Preview>
+        <Image
+          src={previewImage}
+          height={400}
+          width={800}
+          quality={100}
+          priority
+          alt="Calendar preview"
+        />
+      </S.Preview>
+    </S.Container>
+  )
+}
